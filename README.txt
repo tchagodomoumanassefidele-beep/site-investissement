@@ -1,0 +1,1 @@
+VERTGAIN — MAQUETTE DE DÉMONSTRATION\n\nOuvrir index.html dans un navigateur. Aucun serveur n'est nécessaire.\nLe numéro WhatsApp de démonstration est le 72 20 34 29 (+228).\nLes comptes, tâches, soldes et retraits sont simulés localement dans le navigateur.\nAucun dépôt, investissement ou retrait réel n'est traité. Il n'y a pas de backend ni de base de données.\n

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maquette de démonstration d'une plateforme de tâches et de récompenses.">
+  <title>VertGain — Maquette de démonstration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">V</span><span>Vert<span class="green">Gain</span></span></a>
+    <span class="demo-tag">MODE DÉMO</span>
+  </header>
+
+  <main>
+    <section id="auth" class="auth-wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">SIMPLE · QUOTIDIEN · DÉMO</span>
+        <h1>Vos tâches.<br><span class="green">Vos récompenses.</span></h1>
+        <p>Découvrez une maquette de plateforme où les membres réalisent des tâches quotidiennes et suivent leurs récompenses fictives.</p>
+        <div class="feature-row"><span>✓ Tableau de bord</span><span>✓ Tâches quotidiennes</span><span>✓ Suivi du solde</span></div>
+      </div>
+      <form id="registerForm" class="card register-card">
+        <div class="card-icon">✦</div>
+        <h2>Créer un compte</h2>
+        <p class="muted">Inscrivez-vous avec votre numéro de téléphone.</p>
+        <label for="phone">Numéro de téléphone</label>
+        <div class="phone-input"><span>+228</span><input id="phone" type="tel" inputmode="numeric" placeholder="Ex. 90 00 00 00" required minlength="8"></div>
+        <button class="btn primary full" type="submit">Créer mon compte <span>→</span></button>
+        <small class="fine-print">Prototype uniquement : aucune inscription réelle ni aucun paiement n'est effectué.</small>
+      </form>
+    </section>
+
+    <section id="dashboard" class="dashboard hidden">
+      <div class="welcome">
+        <div><span class="eyebrow">ESPACE MEMBRE</span><h1>Bonjour ! 👋</h1><p class="muted">Compte associé au <strong id="userPhone"></strong></p></div>
+        <button id="logout" class="btn outline">Déconnexion</button>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card balance-card"><div class="stat-label">Solde de démonstration</div><div class="amount"><span id="balance">0</span> <small>FCFA</small></div><div class="stat-note">Montant fictif, sans valeur monétaire</div></article>
+        <article class="stat-card"><div class="stat-label">Récompense quotidienne</div><div class="stat-number">100 <small>FCFA</small></div><div class="stat-note">Après validation d'une tâche</div></article>
+        <article class="stat-card"><div class="stat-label">Seuil minimum affiché</div><div class="stat-number">1 000 <small>FCFA</small></div><div class="stat-note">Seuil de retrait simulé</div></article>
+      </div>
+
+      <div class="content-grid">
+        <section class="card tasks-card">
+          <div class="section-heading"><div><span class="eyebrow">GAGNEZ DES POINTS</span><h2>Tâche du jour</h2></div><span class="date-pill" id="today"></span></div>
+          <div class="task-item"><div class="task-symbol">✓</div><div class="task-info"><strong>Consulter le tableau de bord</strong><p>Parcourez votre espace membre.</p></div><span class="reward">+100 F</span></div>
+          <button id="completeTask" class="btn primary full">Valider la tâche</button>
+          <p id="taskMessage" class="status-message" aria-live="polite">Une tâche de démonstration est disponible aujourd'hui.</p>
+        </section>
+
+        <section class="card action-card">
+          <span class="eyebrow">OPÉRATIONS</span><h2>Dépôt & retrait</h2>
+          <p class="muted">Dans cette maquette, les opérations sont simulées. Aucun transfert d'argent n'est possible.</p>
+          <div class="rule-box"><strong>Condition affichée dans le scénario</strong><p>Un investissement préalable est indiqué comme condition de retrait. Vérifiez toujours les risques, les frais et les conditions écrites avant tout versement réel.</p></div>
+          <div class="action-buttons"><button id="deposit" class="btn soft full">Demander les infos de dépôt</button><button id="withdraw" class="btn primary full">Simuler un retrait</button></div>
+          <p class="minimum">Minimum de retrait affiché : <strong>1 000 FCFA</strong></p>
+        </section>
+      </div>
+
+      <section class="contact-strip"><div><strong>Besoin d'informations ?</strong><p>Contact WhatsApp indiqué pour cette maquette.</p></div><a class="btn whatsapp" href="https://wa.me/22872203429?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20la%20maquette%20VertGain." target="_blank" rel="noopener">Contacter le 72 20 34 29 ↗</a></section>
+      <p class="disclaimer">AVERTISSEMENT — VertGain est une maquette fictive. Le solde, les gains et les tâches sont simulés dans le navigateur. Aucun rendement n'est garanti. Ne versez pas d'argent sur la base de cette démonstration.</p>
+    </section>
+  </main>
+
+  <footer>© 2026 VertGain · Prototype d'interface uniquement</footer>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box"><button id="closeModal" class="close" aria-label="Fermer">×</button><div class="card-icon">i</div><h2 id="modalTitle">Information</h2><p id="modalText"></p><a id="modalLink" class="btn whatsapp full hidden" target="_blank" rel="noopener">Ouvrir WhatsApp ↗</a><button id="modalOk" class="btn primary full">Compris</button></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
